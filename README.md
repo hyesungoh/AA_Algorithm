@@ -1,15 +1,8 @@
 ## After Army Algorithm
-<<<<<<< HEAD
 [상대적 참조]: ../master/python/BOJ_10996.py
 ___
 #### 20.06.16
 - [BOJ 2588](../master/python/BOJ_2588.py)
-=======
-[상대적 참조]: ../blob/master/python/BOJ_10996.py
-___
-#### 20.06.16
-- [BOJ 2588](../blob/master/python/BOJ_2588.py)
->>>>>>> f8d343a8c3d8750a19a5b0d44710de4398f3171c
   간단한 문제, input을 어떻게 사용하는 지 까먹은 내가 레전드.
   조금 더 잘 풀어볼 수 있을 거 같다.
 #### 20.06.17
