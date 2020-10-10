@@ -46,5 +46,5 @@ while q:
         t = [loca*2, loca+1, loca-1]
 
         for i in t:
-            if i <= 100000:
+            if 0 <= i <= 100000:
                 q.append([i, sec])
