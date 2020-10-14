@@ -4,20 +4,20 @@ visit = [False] * n
 ans = []
 
 # def bt(index):
-#     if index == m:
+#     if index == m: # 크기가 같을 떄
 #         print(*ans)
 #         return
 #
-#     for i in range(n):
-#         if visit[i]:
+#     for i in range(n): # 입력받은 수-1 까지 반복
+#         if visit[i]: # 이미 사용한 수일 때 넘어감
 #             continue
 #
-#         ans.append(l[i])
-#         visit[i] = True
-#         bt(index+1)
-#         ans.pop()
+#         ans.append(l[i]) # 배열에 해당 값 추가
+#         visit[i] = True # 방문 확인 배열에 값 수정
+#         bt(index+1) # 크기를 늘려 재귀적 호출
+#         ans.pop() # 다음 반복을 위해 배열의 마지막 값 제거
 #
-#         for j in range(i+1, n):
+#         for j in range(i+1, n): # 현재 수보다 큰 수들을 전부 미방문 처리
 #             visit[j] = False
 # bt(0)
 
