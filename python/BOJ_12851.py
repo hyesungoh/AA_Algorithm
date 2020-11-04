@@ -41,17 +41,21 @@ def bfs(start):
     while q:
         place, sec = q.popleft()
 
-        if place == k:
-            if not visit[place]:
-                visit[place] = sec
-                ans += 1
-            elif sec == visit[place]:
-                ans += 1
+        if place == k: # 현재 목표 지점일 때
+            if not visit[place]: # 첫 방문일 때
+                visit[place] = sec # 현재 시간을 저장
+                ans += 1 # 카운트 변수에 +1
+            elif sec == visit[place]: # 첫방문은 아니지만 시간이 같을 때
+                ans += 1 # 카운트 변수에 +1
 
         for next in [place+1, place-1, place*2]:
-            if 0 <= next < MAX:
+            if 0 <= next < MAX: # 범위를 안넘었을 때
+                # 다음으로 갈 곳이 첫 방문 혹은 배정될 시간보다 클 때
                 if visit[next] == 0 or visit[next] >= sec+1:
+                    # 목적지에 저장된 값과 배정될 시간이 다음으로 갈 곳에 저장된 값보다 크면?
                     if visit[k] and sec+1 > visit[next]:
+                        # 큐에 추가를 안하여 시간 단축
+                        # 목적지의 시간과 다음에 연산될 시긴이 더 크면 연산이 불필요하기 때문
                         continue
 
                     visit[next] = sec + 1
@@ -62,8 +66,10 @@ def bfs(start):
 
 n, k = map(int, input().split())
 visit = [0 for _ in range(MAX)]
-if n >= k:
-    print(n-k)
-    print(1)
-    exit(0)
+
+if n >= k: # 처음 시작 지점이 목표 지점보다 같거나 클 때
+    print(n-k) # 시작 지점 - 목표 지점 (동일 시 0)
+    print(1) # -1되는 방법밖에 없음 (동일 시는 아무 연산 안하는 방법 1개)
+    exit(0) # 프로그램 종료
+
 bfs(n)
