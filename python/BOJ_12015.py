@@ -1,12 +1,42 @@
+# n = int(input())
+# l = list(map(int, input().split()))
+# dp = [1 for _ in range(n)]
+# ans = 0
+#
+# for i in range(n):
+#     for j in range(0, i):
+#         if l[i] > l[j]:
+#             dp[i] = max(dp[i], dp[j] + 1)
+#     ans = max(dp[i], ans)
+#
+# print(ans)
+
+def lower_bound(length, value):
+
+    for i in range(length):
+        if vt[i] == value:
+            return
+
+        elif vt[i] > value:
+            vt[i] = value
+            return
+
+    if vt[0] > value:
+        vt[0] = value
+        return
+
 n = int(input())
 l = list(map(int, input().split()))
-dp = [1 for _ in range(n)]
+vt = [0 for _ in range(n)]
+vt[0] = l[0]
+
 ans = 0
 
 for i in range(n):
-    for j in range(0, i):
-        if l[i] > l[j]:
-            dp[i] = max(dp[i], dp[j] + 1)
-    ans = max(dp[i], ans)
+    if vt[ans] < l[i]:
+        ans += 1
+        vt[ans] = l[i]
+    else:
+        lower_bound(ans+1, l[i])
 
-print(ans)
+print(ans+1)
