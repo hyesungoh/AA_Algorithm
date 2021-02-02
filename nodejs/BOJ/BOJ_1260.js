@@ -56,13 +56,17 @@
 // console.log(dfs.join(" "));
 // console.log(bfs.join(" "));
 
-// const input = require('fs').readFileSync("/dev/stdin").toString().trim().split("\n");
-const input = `5 5 3
-5 4
-5 2
-1 2
-3 4
-3 1`.split("\n");
+const input = require("fs")
+    .readFileSync("/dev/stdin")
+    .toString()
+    .trim()
+    .split("\n");
+// const input = `5 5 3
+// 5 4
+// 5 2
+// 1 2
+// 3 4
+// 3 1`.split("\n");
 
 const solve = (isBfs) => {
     const q = [v];
@@ -78,8 +82,9 @@ const solve = (isBfs) => {
 
             if (graph[node].length) {
                 const appendList = isBfs
-                    ? graph[node].sort()
-                    : graph[node].sort().reverse();
+                    ? graph[node].sort((a, b) => a - b)
+                    : graph[node].sort((a, b) => b - a);
+
                 q.push(...appendList);
             }
         }

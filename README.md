@@ -1,5 +1,8 @@
 ## After Army Algorithm
 [상대적 참조]: ../master/python/BOJ_10996.py
+
+#### [Algorithm with JavaScript](https://github.com/hyesungoh/algorithmWithJavaScript)
+
 ___
 #### 20.06.16
 - [BOJ 2588](../master/python/BOJ_2588.py)
@@ -1242,3 +1245,7 @@ ___
 - [BOJ 1260 - nodeJS](../master/nodejs/BOJ_1260.js)
 
   DFS와 BFS 방문 순서를 출력하는 문제를 JS를 이용하여 풀어봤다. 알고리즘의 구성은 입력 부분을 제외하고는 모두 파이썬으로 푼 코드와 동일하지만 틀렸습니다 결과를 받았다... 도저히 어떤 부분이 틀렸는 지 모르겠다. JS는 BOJ가 아닌 프로그래머스를 참고하여 풀어야하나 싶다.
+
+#### 20.2.2
+
+- JavaScirpt를 이용하여 푼 문제들을 위한 레포지토리를 개설했다. 앞으로는 자바스크립트를 이용하여 풀어볼 예정.
