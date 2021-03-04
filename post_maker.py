@@ -35,7 +35,8 @@ for content_sperated_by_day in README_CONTENT[2:]:
             SOURCE_CONTENT += "\n```"
             SOURCE_FILE.close()
 
-            NEW_FILE = open("Algorithm/%s_Python.md" % (name), "w")
+            name = name.replace("_", "-")
+            NEW_FILE = open("Algorithm/%s-Python.md" % (name), "w")
             NEW_FILE_CONTENT = "---\n" \
                                "title: '%s - Python'\n" \
                                "date: 20%s 12:21:13\n" \
