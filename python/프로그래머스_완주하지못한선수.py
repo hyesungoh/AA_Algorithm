@@ -9,7 +9,6 @@ def solution(part, comp):
     for k, v in dict.items():
         if v > 0:
             return k
-<<<<<<< HEAD
 
 # def solution(part, comp):
 #     part.sort()
@@ -19,5 +18,3 @@ def solution(part, comp):
 #         if part[i] != comp[i]:
 #             return part[i]
 #     return part[-1]
-=======
->>>>>>> 3b5b8f190fdf153ec0dc24b970270b5ee38b0e00
