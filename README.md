@@ -1866,3 +1866,7 @@
 - [BOJ 1005](../master/python/BOJ_1005.py)
 
     N개의 건물과 건설 순서 규칙 K가 주어진다. 이때 건물 번호 X가 건설 완료되는 최소시간을 출력하는 문제. deque와 위상 정렬을 사용하여 풀었다. 진압차수를 줄인 후 반복중인 건물의 최소 시간을 저장하는 answers 배열에 `answers[next] = max(answers[next], answers[now] + answers[next])`의 점화식을 이용하여 풀었다.
+
+#### 21.4.10
+
+- [BOJ 11066](../master/python/BOJ_11066.py)
