@@ -70,7 +70,7 @@ def make_readme(README_CONTENT, start_index, LANGUAGE):
 
 
 # 파이썬
-PYTHON_PATH = "README.md"
+PYTHON_PATH = "./README.md"
 PYTHON_README_FILE = open(PYTHON_PATH, "r")
 PYTHON_README_CONTENT = PYTHON_README_FILE.read().split("####")
 PYTHON_START_INDEX = 2
