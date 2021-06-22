@@ -1,5 +1,6 @@
 import os
 
+
 def make_readme(README_CONTENT, start_index, LANGUAGE):
     # 언어마다 컨텐츠의 시작 지점이 다르기 때문에
     for content_sperated_by_day in README_CONTENT[start_index:]:
@@ -25,7 +26,7 @@ def make_readme(README_CONTENT, start_index, LANGUAGE):
             if LANGUAGE == "Python":
                 SOURCE_PATH = "python/" + name + ".py"
             elif LANGUAGE == "Javascript":
-                SOURCE_PATH = "../algorithmJS/nodejs/BOJ/" + name + ".js"
+                SOURCE_PATH = "../algorithmWithJavaScript/BOJ/" + name + ".js"
 
             try:
                 SOURCE_FILE = open(SOURCE_PATH, "r")
@@ -43,21 +44,24 @@ def make_readme(README_CONTENT, start_index, LANGUAGE):
                     if LANGUAGE == "Python":
                         NEW_FILE = open("Algorithm/%s-Python.md" % (name), "w")
                     elif LANGUAGE == "Javascript":
-                        NEW_FILE = open("Algorithm/%s-Javascript.md" % (name), "w")
+                        NEW_FILE = open(
+                            "Algorithm/%s-Javascript.md" % (name), "w")
                 except:
                     print("Algorithm 폴더가 없어서 생성하였습니다")
                     os.mkdir("Algorithm")
                     if LANGUAGE == "Python":
                         NEW_FILE = open("Algorithm/%s-Python.md" % (name), "w")
                     elif LANGUAGE == "Javascript":
-                        NEW_FILE = open("Algorithm/%s-Javascript.md" % (name), "w")
+                        NEW_FILE = open(
+                            "Algorithm/%s-Javascript.md" % (name), "w")
 
                 NEW_FILE_CONTENT = "---\n" \
                                    "title: '%s - %s'\n" \
                                    "date: 20%s 12:21:13\n" \
                                    "category: 'Algorithm'\n" \
                                    "draft: false\n" \
-                                   "---\n" % (name.replace("_", " "), LANGUAGE, day)
+                                   "---\n" % (name.replace("_", " "),
+                                              LANGUAGE, day)
 
                 NEW_FILE.write(NEW_FILE_CONTENT)
                 NEW_FILE.write(content)
@@ -80,17 +84,13 @@ PYTHON_README_FILE.close()
 
 
 # 자바스크립트
-JAVASCRIPT_PATH = "../algorithmJS/nodejs/README.md";
+JAVASCRIPT_PATH = "../algorithmWithJavaScript/README.md"
 JAVASCRIPT_FILE = open(JAVASCRIPT_PATH, "r")
 JAVASCRIPT_CONTENT = JAVASCRIPT_FILE.read().split("## Log")[1].split("####")
 JAVASCRIPT_START_INDEX = 0
 
 make_readme(JAVASCRIPT_CONTENT, JAVASCRIPT_START_INDEX, "Javascript")
 JAVASCRIPT_FILE.close()
-
-
-
-
 
 
 # README_FILE = open("README.md", "r")
